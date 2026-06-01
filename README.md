@@ -14,6 +14,7 @@ This repository is a fork/adaptation layer, not an original framework. It keeps 
 - `.codex/`: Codex skills, agents, references, and suite wrappers
 - `external/mixtapetools/`: imported tools from Pablo's MixtapeTools fork
 - `guide/` and `docs/`: inherited dittonomics documentation sources and rendered output
+- `templates/`: portable setup files for new computers
 - `voice/`: inherited templates for optional writing-voice customization
 
 ## Operating Principle
@@ -21,6 +22,8 @@ This repository is a fork/adaptation layer, not an original framework. It keeps 
 Pablo is the principal investigator and final verifier. Codex is the research assistant. The research pipeline target is zero errors, so substantive research code should be written in tools Pablo can inspect and verify.
 
 See `AGENTS.md` for the active Codex instructions that govern work in this repository.
+
+For a new Windows computer, start with `templates/desktop-codex-setup.md`, then copy `templates/global-codex-AGENTS.md` into the computer's global Codex folder.
 
 ## Attribution
 
