@@ -1,119 +1,27 @@
-# pbrugaro research suite
+# Pbrugaro Research Suite
 
-pbrugaro Research Suite is my personal Codex toolkit for empirical economics research. It collects and adapts reusable research workflows, skills, agents, and external tools for moving from early ideas to literature discovery, Stata/R/Python analysis, manuscript writing, review, revision, and submission.
+Personal Codex research suite for empirical economics. It combines a dittonomics-based Codex workflow with selected external tools from MixtapeTools, adapted for a Stata-first research pipeline where Pablo remains the final verifier.
 
-This repository is forked from [sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics), which remains the core workflow layer. I use this fork as a place to keep that foundation while adding tools and conventions tailored to my own research practice.
+This repository is a fork/adaptation layer, not an original framework. It keeps reusable skills, agents, references, and imported tools for ideation, discovery, analysis planning, writing, review, revision, PDF reading, project scaffolding, and research-state tracking.
 
-## Dittonomics Base
+## Sources
 
-Dittonomics is a public manual and starter kit for a deliberately remixed Codex research workflow.
-
-The name is literal: like Ditto, the project copies useful traits from multiple upstream repos and reshapes them into one portable system for empirical work in Codex.
-
-The active workflow now starts with an explicit ideation phase before discovery, so a vague topic or dataset hunch can be screened, turned into research questions, and evaluated before the heavier Clo architecture spins up.
-
-> Caution
->
-> This repository is under active construction and will keep changing as the public starter and docs catch up with the live system.
-
-The public repo keeps the upstream workflow architecture, but rewrites the active guidance for Codex:
-
-- `CLAUDE.md` becomes `AGENTS.md`, `AGENTS.override.md`, and repo-local skills
-- `.claude/rules` and `.claude/references` become active workflow references plus source mirrors
-- slash commands become explicit `$clo-*` skills
-- Claude agents become Codex custom subagents
-- hidden hook behavior becomes explicit utilities, references, and config guidance
-- `explorations/` stays a repo-level sandbox and should be created when missing
-- writing voice becomes an explicit optional layer instead of an undocumented personal habit
-- end-of-day state and next-day recovery now use explicit `checkpoint` and `resume-context` utilities instead of hidden session hooks
-- post-submission revision now includes a strategic roadmap layer inside `$clo-revise`, with task graphs, dependency validation, and execution blocks
-- Clo-Author 26.05 dashboard, lint, lifecycle, permission-registry, decision-record, and theory ideas are translated into explicit Codex utilities and references
-- talks remain Beamer-first by default, with Quarto RevealJS only when explicitly requested
-
-This repository is documentation-first, but it also includes a forkable `.codex/` starter layer. It explains the architecture, customization patterns, migration layer, optional voice setup, and ships a reusable Codex-facing template bundle.
+- Core workflow base: [sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics)
+- External research tools fork: [pablobrugarolas/MixtapeTools](https://github.com/pablobrugarolas/MixtapeTools), forked from [scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 
 ## What This Repo Contains
 
-- `.codex/`: forkable starter bundle with generic `AGENTS.md`, `clo-*` skills, custom subagents, and workflow references
-- `guide/`: Quarto source for the public documentation site
-- `docs/`: rendered site output for GitHub Pages
-- `voice/`: public templates for building your own writing-voice layer
-- `.github/workflows/render-docs.yml`: render workflow that keeps `docs/` in sync
+- `.codex/`: Codex skills, agents, references, and suite wrappers
+- `external/mixtapetools/`: imported tools from Pablo's MixtapeTools fork
+- `guide/` and `docs/`: inherited dittonomics documentation sources and rendered output
+- `voice/`: inherited templates for optional writing-voice customization
 
-## Documentation Structure
+## Operating Principle
 
-- Quick Start
-- User Guide
-- Agents
-- Architecture
-- Customization
-- Reference
+Pablo is the principal investigator and final verifier. Codex is the research assistant. The research pipeline target is zero errors, so substantive research code should be written in tools Pablo can inspect and verify.
 
-The website is intended to stay open while you work. It now functions as:
-
-- the onboarding guide for colleagues
-- the tutorial and roadmap for using the skills and agents properly across an economics project
-- the cheat sheet for skills, agents, utilities, and common prompts
-
-## Core Defaults Reflected Here
-
-- the main Codex session is the orchestrator
-- the parent orchestrator owns persistence unless it explicitly delegates a named target
-- worker-critic separation is preserved across the stack
-- Stata is the primary default language
-- data import, cleaning, merging, and construction should be done in Stata unless Pablo explicitly says otherwise
-- R is not a default; use it only when Pablo explicitly requests it for a specific script, package, method, or author-preferred implementation
-- Python and Julia should not be used in the research workflow unless Pablo explicitly authorizes them for a specific task
-- Pablo is the principal investigator and final verifier; Codex is the research assistant
-- the pipeline target is zero errors, so every substantive research step must be written in code Pablo can inspect and verify
-- repo-local rules beat generic defaults
-- voice is optional, explicit, and layered rather than hardcoded into every workflow
-- `econ-intro-writing`, abstract writing, and the private voice hierarchy remain protected parts of the writing stack
-- local dashboards and HTML reports are project artifacts, not public website outputs
-
-## Forking This Repo
-
-If you fork this repository, the public starter layer is:
-
-- `.codex/AGENTS.md`
-- `.codex/agents/`
-- `.codex/skills/`
-- `.codex/WORKFLOW_QUICK_REF.md`
-- `.codex/config.example.toml`
-- `voice/`
-
-Treat that folder as a distributable starter kit. Copy or adapt it into your own `~/.codex/` home when you want a user-level install, and use repo-local `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/` for project-specific behavior.
-
-## Local Development
-
-If Quarto is installed:
-
-```bash
-quarto render guide
-```
-
-That renders the site into `docs/`.
-
-## The Daily Operational Loop
-
-Recommended daily usage:
-
-1. `use $clo-research-tools resume-context`
-2. if the question is still fuzzy, start with `use $clo-ideate session`
-3. run the workflow skill that matches the task
-4. `use $clo-research-tools checkpoint`
-
-Checkpoint files live in `.codex-state/` inside working repos and are meant to be local operational memory rather than canonical research outputs.
+See `AGENTS.md` for the active Codex instructions that govern work in this repository.
 
 ## Attribution
 
-This manual is adapted from:
-
-- the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) project and repo by Hugo Sant'Anna
-- [my_claude_skills](https://github.com/dariia-m/my_claude_skills) by Daria M.
-- [claudeblattman](https://github.com/chrisblattman/claudeblattman) by Chris Blattman
-- [strategic-revision](https://github.com/jusi-aalto/strategic-revision) for strategic post-submission revision logic
-- [research-companion](https://github.com/andrehuang/research-companion/) for research-stage orchestration ideas
-- [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline) for ideation and question-screening structure
-
-It does not attempt a literal clone of any one repo. The goal is to preserve the useful architecture and workflow patterns while making the instructions accurate and usable for Codex.
+This suite builds on dittonomics, which itself credits Clo-Author, my_claude_skills, claudeblattman, strategic-revision, research-companion, and idea-evaluation-pipeline. The MixtapeTools imports are attributed in `external/mixtapetools/README.md`.
