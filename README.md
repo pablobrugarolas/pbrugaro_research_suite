@@ -1,4 +1,4 @@
-# pbrugaro Research Suite
+# pbrugaro research suite
 
 pbrugaro Research Suite is my personal Codex toolkit for empirical economics research. It collects and adapts reusable research workflows, skills, agents, and external tools for moving from early ideas to literature discovery, Stata/R/Python analysis, manuscript writing, review, revision, and submission.
 
