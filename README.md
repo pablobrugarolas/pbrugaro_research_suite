@@ -1,6 +1,12 @@
-# Dittonomics
+# Pbrugaro Research Suite
 
-Dittonomics is my public manual and starter kit for a deliberately remixed Codex research workflow.
+Pbrugaro Research Suite is my personal Codex toolkit for empirical economics research. It collects and adapts reusable research workflows, skills, agents, and external tools for moving from early ideas to literature discovery, Stata/R/Python analysis, manuscript writing, review, revision, and submission.
+
+This repository is forked from [sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics), which remains the core workflow layer. I use this fork as a place to keep that foundation while adding tools and conventions tailored to my own research practice.
+
+## Dittonomics Base
+
+Dittonomics is a public manual and starter kit for a deliberately remixed Codex research workflow.
 
 The name is literal: like Ditto, the project copies useful traits from multiple upstream repos and reshapes them into one portable system for empirical work in Codex.
 
