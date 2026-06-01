@@ -60,13 +60,16 @@ The website is intended to stay open while you work. It now functions as:
 - the main Codex session is the orchestrator
 - the parent orchestrator owns persistence unless it explicitly delegates a named target
 - worker-critic separation is preserved across the stack
-- Python is the primary default language
-- Stata is the co-default
-- R and Julia remain supported
+- Stata is the primary default language
+- data import, cleaning, merging, and construction should be done in Stata unless Pablo explicitly says otherwise
+- R is not a default; use it only when Pablo explicitly requests it for a specific script, package, method, or author-preferred implementation
+- Python and Julia should not be used in the research workflow unless Pablo explicitly authorizes them for a specific task
+- Pablo is the principal investigator and final verifier; Codex is the research assistant
+- the pipeline target is zero errors, so every substantive research step must be written in code Pablo can inspect and verify
 - repo-local rules beat generic defaults
 - voice is optional, explicit, and layered rather than hardcoded into every workflow
 - `econ-intro-writing`, abstract writing, and the private voice hierarchy remain protected parts of the writing stack
-- local dashboards and HTML reports are project artifacts, not replacements for the public manual website
+- local dashboards and HTML reports are project artifacts, not public website outputs
 
 ## Forking This Repo
 
@@ -101,15 +104,6 @@ Recommended daily usage:
 4. `use $clo-research-tools checkpoint`
 
 Checkpoint files live in `.codex-state/` inside working repos and are meant to be local operational memory rather than canonical research outputs.
-
-## Publishing
-
-The intended public home is:
-
-- Repo: `https://github.com/sebastianritterg/dittonomics`
-- Site: `https://sebastianritterg.github.io/dittonomics/`
-
-GitHub Pages should be configured to serve from the `docs/` directory on `main`.
 
 ## Attribution
 
