@@ -1,6 +1,6 @@
-# Pbrugaro Research Suite
+# pbrugaro Research Suite
 
-Pbrugaro Research Suite is my personal Codex toolkit for empirical economics research. It collects and adapts reusable research workflows, skills, agents, and external tools for moving from early ideas to literature discovery, Stata/R/Python analysis, manuscript writing, review, revision, and submission.
+pbrugaro Research Suite is my personal Codex toolkit for empirical economics research. It collects and adapts reusable research workflows, skills, agents, and external tools for moving from early ideas to literature discovery, Stata/R/Python analysis, manuscript writing, review, revision, and submission.
 
 This repository is forked from [sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics), which remains the core workflow layer. I use this fork as a place to keep that foundation while adding tools and conventions tailored to my own research practice.
 
@@ -31,8 +31,6 @@ The public repo keeps the upstream workflow architecture, but rewrites the activ
 - talks remain Beamer-first by default, with Quarto RevealJS only when explicitly requested
 
 This repository is documentation-first, but it also includes a forkable `.codex/` starter layer. It explains the architecture, customization patterns, migration layer, optional voice setup, and ships a reusable Codex-facing template bundle.
-
-![Dittonomics mascot](guide/assets/ditto-mascot.svg)
 
 ## What This Repo Contains
 
